@@ -1,0 +1,164 @@
+#root {
+  text-align: center;
+  --background: rgb(218,229,245);
+  --dark-blue: #16008B;
+  --blue-header: #001F8B;
+  --selected: #DCDCDC;
+  --purple: rgb(179,139,250);
+  --pink: rgb(255,121,242);
+  --sky-blue: #43E6FC;
+  --orange: #F19576;
+  --blue: #0047FF;
+  --light-blue: rgb(102,145,255);
+  width: 100vw;
+  height: 100vh;
+}
+
+.vh-100{
+  min-height: 100%;
+  height: 100vh;
+}
+
+.vw-100{
+  min-width: 100%;
+  width: 100vh;
+}
+
+.abbreviation{
+  border-radius: 50%;
+  color: white;
+  width: 40px;
+  height: 40px;
+}
+
+/* Custom CSS */
+.background{
+  background: var(--background);
+  background-color: var(--background);
+}
+
+.bg-dk-blue {
+  background: var(--dark-blue);
+  background-color: var(--dark-blue);
+}
+
+.bg-purple {
+  background: var(--purple);
+  background-color: rgb(179,139,250);
+}
+
+.bg-pink {
+  background: var(--pink);
+  background-color: rgb(255,121,242);
+}
+
+.bg-sky-blue {
+  background: var(--sky-blue);
+  background-color: #43E6FC;
+}
+
+.bg-orange {
+  background: var(--orange);
+  background-color: #F19576;
+}
+
+.bg-blue {
+  background: var(--blue);
+  background-color: #0047FF;
+}
+
+.bg-light-blue {
+  background: var(--light-blue);
+  background-color: rgb(102,145,255);
+}
+
+.bg-blue-header{
+  background: var(--blue-header);
+  background-color: var(--blue-header);
+}
+
+.bg-selected {
+  background: var(--selected);
+  background-color: var(--selected);
+}
+
+.hidden-scrollbar {
+  overflow: hidden; 
+  height: 100%; 
+  width: 100%; 
+  -webkit-overflow-scrolling: touch; 
+}
+
+.hidden-scrollbar:hover {
+  overflow: auto; 
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none; 
+}
+
+.hidden-scrollbar:focus-visible {
+  overflow: auto; 
+}
+
+.hidden-scrollbar::selection {
+  background: transparent; 
+}
+
+
+
+
+.group-button{
+  position: absolute;
+  bottom: 3%;
+  right: 5%;
+  width: 3rem;
+  cursor: pointer;
+}
+
+.group-item{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 1rem 2rem;
+  gap: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  border-radius: 15px;
+}
+
+.group-item:hover{
+  background-color: var(--selected);
+}
+
+.submit-arrow{
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1rem;
+  width: 1.5rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.disable-btn{
+  filter: grayscale(1);
+  opacity: 0.5;
+  cursor: none;
+}
+
+.group-message{
+  background-color: white;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 0.5rem;
+  padding: 2rem;
+  text-align: start;
+  border-radius: 5px;
+}
+
+.form-circle{
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+}
