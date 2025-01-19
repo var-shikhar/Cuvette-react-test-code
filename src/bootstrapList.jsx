@@ -5,11 +5,11 @@ import ModalWrapper from './components/modal';
 import useList from './hooks/useList';
 
 const BootstrapList = () => {
-    const { selectedGroup, groupList, setSelectedGroup, colorList, modalToggle, setModalToggle, groupForm, setGroupForm, handleGroupAdd, handleGroupMessage } = useList();
+    const { selectedGroup, groupList, setSelectedGroup, colorList, modalToggle, setModalToggle, groupForm, setGroupForm, handleGroupAdd, handleGroupMessage, handleDeleteGroupChat, handleGroupDeletion, handleMessageDeletion, handleResetSelectedGroup, isMobileSize } = useList();
     return (
         <>
             <div className='row h-100 g-0'>
-                <div className='col-md-4 col-lg-3 col-12'>
+                <div className={`col-md-4 col-lg-3 col-12 ${isMobileSize && selectedGroup !== null && 'd-none'}`}>
                     <div className='position-relative d-flex flex-column vh-100'>
                         <h2 className='text-center p-2 p-md-4'>Pocket Notes</h2>
                         <div className='h-auto flex-fill overflow-y-scroll hidden-scrollbar'>
@@ -19,7 +19,17 @@ const BootstrapList = () => {
                     </div>
                 </div>
                 <div className='col-md-8 col-lg-9 col-12 background h-100'>
-                    {selectedGroup ? <GroupMessage details={selectedGroup} handleNewText={(id, message) => handleGroupMessage(id, message)} /> : 
+                    {selectedGroup ? 
+                        <GroupMessage 
+                            isMobileSize={isMobileSize}
+                            details={selectedGroup} 
+                            handleNewText={(id, message) => handleGroupMessage(id, message)}  
+                            handleGroupDel={(grpID) => handleGroupDeletion(grpID)}
+                            handleGroupChatDel={(grpID) => handleDeleteGroupChat(grpID)}
+                            handleMessageDel={(grpID, msgID) => handleMessageDeletion(grpID, msgID)}
+                            handleResetSelectedGroup={handleResetSelectedGroup}
+                        /> 
+                    : 
                         <div className='d-flex align-items-center justify-content-between flex-column h-100 w-100 py-2 py-md-4'>
                             <img src='./00b6d4748cd536df01bd2b4fecc1d821.png' className='my-auto w-auto' />
                             <div className='d-flex gap-2 align-items-center'>

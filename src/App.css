@@ -82,6 +82,11 @@
   background-color: var(--selected);
 }
 
+.bg-none{
+  background: transparent;
+  background-color: transparent;
+}
+
 .hidden-scrollbar {
   overflow: hidden; 
   height: 100%; 
@@ -161,4 +166,17 @@
   width: 25px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.message-dot{
+  position: absolute;
+  right: 0.5%;
+  top: 2%;
+  width: 1rem;
+  cursor: pointer;
+}
+
+.arrow-svg{
+  cursor: pointer;
+  color: white;
 }
