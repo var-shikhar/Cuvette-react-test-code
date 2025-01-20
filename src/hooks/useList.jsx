@@ -105,18 +105,25 @@ const useList = () => {
                 message: message,
                 date: new Date(),
             };
-        
+
+            let groupOBJ = {};
             startTransition(() => {
                 setGroupList((prev) => {
-                    const updatedList = prev.map((group) =>
-                        group.id === foundGroup.id
-                        ? { ...group, messages: [...group.messages, newMessage] }
-                        : group
-                    );
+                    const updatedList = prev.map((group) => {
+                        if(group.id === foundGroup.id){
+                            const tempGroup = { ...group, messages: [...group.messages, newMessage] };
+                            groupOBJ = tempGroup;
+                            return tempGroup;
+                        } else return group;
+                    });
+
                     handleLocalStorageUpdate(updatedList);
                     return updatedList;
                 });
+                setSelectedGroup(groupOBJ);
             });
+
+            // setSelectedGroup
             alert('Message has added successfully!');
         }
     }
